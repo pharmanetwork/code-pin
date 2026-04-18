@@ -1,29 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <title>Accès sécurisé</title>
+
 <style>
 body {
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   text-align: center;
   margin-top: 80px;
   background: #0f172a;
   color: white;
 }
+
 .box {
   background: #1e293b;
   padding: 30px;
   border-radius: 20px;
   display: inline-block;
+  min-width: 280px;
 }
+
 input {
   padding: 12px;
   font-size: 18px;
   border-radius: 10px;
   border: none;
+  width: 80%;
+  margin-top: 10px;
 }
+
 button {
+  margin-top: 15px;
   padding: 12px 20px;
   font-size: 18px;
   border-radius: 10px;
@@ -32,16 +40,30 @@ button {
   color: white;
   cursor: pointer;
 }
+
+button:hover {
+  background: #16a34a;
+}
+
+#result {
+  margin-top: 15px;
+  font-size: 14px;
+}
 </style>
+
 </head>
 
 <body>
 
 <div class="box">
   <h2>🔒 Entrez le code PIN</h2>
+
   <input type="password" id="pin" placeholder="Code PIN">
-  <br><br>
+
+  <br>
+
   <button onclick="checkPin()">Voir le contenu</button>
+
   <p id="result"></p>
 </div>
 
@@ -49,7 +71,7 @@ button {
 function checkPin() {
   var pin = document.getElementById("pin").value;
 
-  if(pin === "3289") {
+  if (pin === "3289") {
     window.location.href = "success.html";
   } else {
     document.getElementById("result").innerHTML = "❌ Code incorrect";
