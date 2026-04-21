@@ -1,1 +1,74 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Accès sécurisé</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.box {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #16a34a;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>Entrer le code PIN</h2>
+  
+  <input type="password" id="pin" placeholder="Code PIN">
+  <br>
+  <button onclick="checkPin()">Valider</button>
+
+  <p id="error" style="color:red;"></p>
+</div>
+
+<script>
+function checkPin() {
+  var pin = document.getElementById("pin").value;
+
+  if (pin === "1234") {
+    window.location.href = "secret.html";
+  } else {
+    document.getElementById("error").innerText = "Code incorrect";
+  }
+}
+</script>
+
+</body>
+</html>
